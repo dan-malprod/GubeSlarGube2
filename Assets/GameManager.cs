@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public Gube CurrentlyAttacking = null;
     public Gube NextAttack = null;
 
+    public OnSelectDoThing DmgText0;
+    public OnSelectDoThing DmgText1;
+
     public float StateTimerMax = 1.0f;
     float StateDelta = 0.0f;
 
@@ -31,6 +34,9 @@ public class GameManager : MonoBehaviour
                 {
                     Gube0.CurrentState = GubStates.Attack;
                     Gube1.CurrentState = GubStates.Damaged;
+                    DmgText0.gameObject.SetActive(false);
+                    DmgText1.gameObject.SetActive(true);
+                    DmgText1.OnSelect(Random.Range(0, 100).ToString());
                     NextAttack = Gube1;
                     
                 }
@@ -38,6 +44,9 @@ public class GameManager : MonoBehaviour
                 {
                     Gube0.CurrentState = GubStates.Damaged;
                     Gube1.CurrentState = GubStates.Attack;
+                    DmgText1.gameObject.SetActive(false);
+                    DmgText0.gameObject.SetActive(true);
+                    DmgText0.OnSelect(Random.Range(0, 100).ToString());
                     NextAttack = Gube0;
                 }
     

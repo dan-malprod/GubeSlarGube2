@@ -181,7 +181,9 @@ MonoBehaviour:
   Keyframes:
   - {fileID: 5876513627942073899}
   - {fileID: 5670254182339290673}
-  Velocity: {x: 0, y: 0, z: 0}
+  myText: {fileID: 8429600697692334236}
+  spring: 0.4
+  drag: 0.7
 --- !u!1 &7400536412965173282
 GameObject:
   m_ObjectHideFlags: 0
