@@ -20,19 +20,27 @@ public class GameManager : MonoBehaviour
             StateDelta = 0.0f;
             if (CurrentlyAttacking != null)
             {
+                Gube0.CurrentState = GubStates.IdleDefend;
+                Gube1.CurrentState = GubStates.IdleDefend;
                 CurrentlyAttacking = null;
             }
             else
             {
                 CurrentlyAttacking = NextAttack;
-                if(NextAttack == Gube0)
+                if (CurrentlyAttacking == Gube0)
                 {
+                    Gube0.CurrentState = GubStates.Attack;
+                    Gube1.CurrentState = GubStates.Damaged;
                     NextAttack = Gube1;
+                    
                 }
                 else
                 {
-                    NextAttack = Gube1;
+                    Gube0.CurrentState = GubStates.Damaged;
+                    Gube1.CurrentState = GubStates.Attack;
+                    NextAttack = Gube0;
                 }
+    
             }
         }
     }

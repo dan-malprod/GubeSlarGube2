@@ -6,6 +6,7 @@ public enum GubStates
 {
     Attack,
     IdleDefend,
+    Damaged,
     Total
 }
 public class Gube : MonoBehaviour
