@@ -9,4 +9,9 @@ public class SceneLoader : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(SceneName);
     }
+
+    public void QuitSibelius()
+    {
+        Application.Quit();
+    }
 }
